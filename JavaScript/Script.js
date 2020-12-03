@@ -124,3 +124,5 @@ deleteButton.addEventListener('click', button => {
   calculator.delete()
   calculator.updateDisplay()
 })
+
+let play = function(){document.getElementById("audio").play()}
