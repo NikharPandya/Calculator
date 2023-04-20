@@ -1,41 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dist/output.css" />
+    <script src="/js/darkMode.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <title>Calculator with Tailwindcss</title>
+  </head>
 
-<head>
+  <body class="box-border font-sans p-0 m-0 bg-neutral-300 dark:bg-neutral-800">
+    <label class="relative flex justify-center items-center group p-2 text-xl">
+      <input
+        id="checkbox"
+        type="checkbox"
+        class="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md"
+      />
+      <span
+        class="w-16 h-10 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-green-400 after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-6 group-hover:after:translate-x-1"
+      ></span>
+    </label>
 
-	 <title>calculator</title>
-	 <link href="CSS/style.css" rel="stylesheet">
-	 <script src="JavaScript/Script.js" defer></script>	
-
-</head>
-
-<body>
-	<div class="calculator-grid">
-		<div class="output">
-			<div data-previous-operand class="previous-operand"></div>
-			<div data-current-operand class="current-operand"></div>
-		</div>
-		<button data-all-clear class="span-two">AC</button>
-		<button data-delete>DEL</button>
-		<button data-operation>÷</button>
-		<button data-number >1</button>
-		<button data-number >2</button>
-		<button data-number >3</button>
-		<button data-operation>*</button>
-		<button data-number >4</button>
-		<button data-number >5</button>
-		<button data-number >6</button>
-		<button data-operation>+</button>
-		<button data-number >7</button>
-		<button data-number >8</button>
-		<button data-number >9</button>
-		<button data-operation >-</button>
-		<button data-number >00</button>
-		<button data-number >0</button>
-		<button data-number>.</button>
-		<button data-equals class="span-four" onclick="play()">=</button>
-		<audio id="audio" src="cashreg.wav"></audio>
-	</div> 
-
-</body>
+    <div
+      class="calculator-grid grid justify-center content-center min-h-screen grid-cols-[repeat(4,100px)] grid-rows-[minmax(120px,_auto)_repeat(5,100px)]"
+    >
+      <div
+        class="output flex items-end justify-around flex-col p-2 break-all col-span-full bg-gray-500/20"
+      >
+        <div
+          data-previous-operand
+          class="previous-operand text-stone-500 text-2xl"
+        ></div>
+        <div
+          data-current-operand
+          class="current-operand text-stone-500 text-4xl"
+        ></div>
+      </div>
+      <button
+        data-all-clear
+        class="span-two text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600 col-span-2"
+      >
+        AC
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-delete
+      >
+        DEL
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-operation
+      >
+        ÷
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        1
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        2
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        3
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-operation
+      >
+        *
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        4
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        5
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        6
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-operation
+      >
+        +
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        7
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        8
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        9
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-operation
+      >
+        -
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        00
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        0
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-number
+      >
+        .
+      </button>
+      <button
+        class="text-3xl border border-solid text-stone-100 hover:text-stone-400 bg-gray-500 dark:bg-neutral-600"
+        data-equals
+        class="span-four"
+      >
+        =
+      </button>
+    </div>
+    <style>
+      #checkbox:checked + label .switch-ball {
+        background-color: white;
+        transform: translateX(24px);
+        transition: transform 0.3s linear;
+      }
+    </style>
+  </body>
 </html>
